@@ -8,6 +8,6 @@ fs.readFile(filePath, 'utf8', (error, data) => {
     console.error('Error:', error.message);
     process.exit(1);
   } else {
-  console.log(data);
+    console.log(data);
   }
 });
