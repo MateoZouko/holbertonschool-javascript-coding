@@ -7,9 +7,9 @@ request.get(url, (error, response, body) => {
     console.error(error);
   }
   const data = JSON.parse(body);
-  const completedTasks = data.filter(task => task.completed);
+  const completedTasks = data.filter(task => task.completed && task.userId);
   const completedTasksUsers = completedTasks.reduce((acc, task) => {
-    acc[task.userID] = (acc[task.userID] || 0) + 1;
+    acc[task.userId] = (acc[task.userId] || 0) + 1;
     return acc;
   }, {});
   console.log(completedTasksUsers);
