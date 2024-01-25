@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const request = require('request');
-const urlAPI = 'https://swapi-api.hbtn.io/api/films/';
+const urlAPI = process.argv[2];
 
 request.get(urlAPI, (error, response, body) => {
   if (error) {
